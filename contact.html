@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us | Lease Ventures (U) Ltd</title>
+<meta name="description" content="Contact Lease Ventures (U) Ltd, Plot 932 Bukoto Ntinda Road, Kampala. Call +256 782 140304 or +256 393 236168." />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<script>try{if(localStorage.getItem('lv-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Lease Ventures home"><img src="images/logo.png" alt="Lease Ventures logo" /><span>Lease Ventures</span></a>
+    <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">About <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="about.html#who"><i class="fa-solid fa-building"></i>Who We Are</a><a href="about.html#vision"><i class="fa-solid fa-bullseye"></i>Vision & Mission</a><a href="about.html#values"><i class="fa-solid fa-gem"></i>Our Values</a><a href="about.html#team"><i class="fa-solid fa-people-group"></i>Our Team</a><a href="about.html#industries"><i class="fa-solid fa-industry"></i>Industries We Serve</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">Fleet <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="services.html"><i class="fa-solid fa-list-check"></i>All Services</a><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="parts-accessories.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a></div></li><li><a href="contact.html" class="active">Contact</a></li></ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="knob"><i class="fa-solid fa-sun ico-sun"></i><i class="fa-solid fa-moon ico-moon"></i></span></button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<header class="page-hero"><div class="page-hero-img" style="background-image:url('images/office.jpg')"></div>
+  <div class="container"><div class="crumbs"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i>Contact</div>
+  <h1>Contact Us</h1><p>Visit our offices, call us or send an enquiry and we will respond quickly.</p></div></header>
+<section class="section"><div class="container"><div class="contact-grid">
+  <div class="info-list reveal">
+    <div class="info"><div class="ico"><i class="fa-solid fa-location-dot"></i></div><div><small>Visit us</small><b>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket)</b><b>P. O. Box 134904, Kampala</b></div></div>
+    <div class="info"><div class="ico"><i class="fa-solid fa-phone"></i></div><div><small>Call us</small><a href="tel:+256782140304">+256 782 140304</a><a href="tel:+256393236168">+256 393 236168</a></div></div>
+    <div class="info"><div class="ico"><i class="fa-solid fa-envelope"></i></div><div><small>Email</small><a href="mailto:info@leaseventures.co.ug">info@leaseventures.co.ug</a></div></div>
+    <div class="info"><div class="ico"><i class="fa-solid fa-globe"></i></div><div><small>Website</small><a href="https://www.leaseventures.co.ug">www.leaseventures.co.ug</a></div></div></div>
+  <form class="form reveal" id="contactForm" novalidate><h3>Send an Enquiry</h3><p>Fill in the form, then send it by WhatsApp or email.</p>
+    <div class="row"><div class="field"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" /></div></div>
+    <div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email" /></div>
+    <div class="field"><label for="interest">I am interested in</label><select id="interest" name="interest"><option>Motor Vehicle Sales & Leasing</option><option>Motorcycle Sales & Leasing</option><option>Garage Services</option><option>Genuine Spare Parts</option><option>Automotive Accessories</option><option>Driver & Rider Training</option><option>Clearing & Forwarding</option><option>General enquiry</option></select></div>
+    <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+    <div class="form-actions"><button type="button" class="btn btn-wa" id="sendWa"><i class="fa-brands fa-whatsapp"></i>Send via WhatsApp</button><button type="button" class="btn btn-outline" id="sendMail"><i class="fa-solid fa-envelope"></i>Send via Email</button></div></form></div>
+  <div class="map reveal"><iframe title="Lease Ventures location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bukoto+Ntinda+Road+Kampala+Uganda&amp;output=embed"></iframe></div></div></section>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="images/logo.png" alt="Lease Ventures logo" />
+      <p>Lease Ventures (U) Ltd — we keep you moving. Quality automotive solutions to the utmost satisfaction of our customers.</p></div>
+    <div><h4>Fleet &amp; Parts</h4><ul>
+      <li><a href="vehicles.html">Motor Vehicles</a></li><li><a href="motorcycles.html">Motorcycles</a></li>
+      <li><a href="parts-accessories.html">Spare Parts &amp; Accessories</a></li></ul></div>
+    <div><h4>Services</h4><ul>
+      <li><a href="garage.html">Garage Services</a></li><li><a href="clearing-forwarding.html">Clearing &amp; Forwarding</a></li>
+      <li><a href="driver-training.html">Driver &amp; Rider Training</a></li><li><a href="about.html">About Us</a></li></ul></div>
+    <div><h4>Visit &amp; Contact</h4><ul>
+      <li><i class="fa-solid fa-location-dot"></i>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket), Kampala</li>
+      <li><i class="fa-solid fa-envelope"></i>P. O. Box 134904, Kampala</li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:+256782140304">+256 782 140304</a>, <a href="tel:+256393236168">+256 393 236168</a></li>
+      <li><i class="fa-solid fa-at"></i><a href="mailto:info@leaseventures.co.ug">info@leaseventures.co.ug</a></li></ul></div>
+  </div>
+  <div class="container footer-bottom"><span>&copy; <span id="year">2026</span> Lease Ventures (U) Ltd. All rights reserved.</span>
+    <span>URSB No. 80020002067978 &nbsp;|&nbsp; PPDA No. PRV/SPLS/26194/SEP/19</span></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
