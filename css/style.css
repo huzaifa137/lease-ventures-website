@@ -640,22 +640,80 @@ html[data-theme="dark"] .theme-toggle .knob {
 .hero-bg-img {
     position: absolute;
     inset: 0;
-    background: url('../images/hero.jpg') 62% bottom / cover no-repeat;
+    background: url('../images/racingcars-poster.jpg') 62% bottom / cover no-repeat;
 }
 
 html[data-theme="dark"] .hero-bg-img {
     filter: brightness(.75);
 }
 
+/* Hero video: sits on top of the poster, fades in only once it is really playing */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% bottom;
+    opacity: 0;
+    transition: opacity .9s ease;
+    /* own compositor layer: keeps decoding off the main thread's layout/paint work */
+    transform: translateZ(0) scale(1.04);
+    will-change: transform, opacity;
+    pointer-events: none;
+}
+
+.hero-video.is-playing {
+    opacity: 1;
+}
+
+html[data-theme="dark"] .hero-video {
+    filter: brightness(.75);
+}
+
+.hero-toggle {
+    position: absolute;
+    right: 24px;
+    bottom: 76px;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .55);
+    background: rgba(15, 23, 42, .55);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background .2s ease, transform .2s ease;
+}
+
+.hero-toggle[hidden] {
+    display: none;
+}
+
+.hero-toggle:hover {
+    background: var(--red);
+    transform: scale(1.06);
+}
+
+.hero-toggle:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
 .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .90) 30%, rgba(255, 255, 255, .45) 50%, rgba(255, 255, 255, 0) 68%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, .94) 0%, rgba(255, 255, 255, .78) 22%, rgba(255, 255, 255, .28) 40%, rgba(255, 255, 255, 0) 56%);
 }
 
 html[data-theme="dark"] .hero-bg::after {
-    background: linear-gradient(90deg, rgba(10, 13, 18, .94) 0%, rgba(10, 13, 18, .86) 30%, rgba(10, 13, 18, .45) 50%, rgba(10, 13, 18, 0) 68%);
+    background: linear-gradient(90deg, rgba(10, 13, 18, .92) 0%, rgba(10, 13, 18, .75) 22%, rgba(10, 13, 18, .3) 40%, rgba(10, 13, 18, 0) 56%);
 }
 
 .hero-grid {
@@ -2070,14 +2128,27 @@ html[data-theme="dark"] .hero-grid {
         min-height: 0;
         align-items: flex-start;
     }
+    /* phones: headline on top, the footage in its own band underneath so the cars stay visible */
+    .hero-bg-img,
+    .hero-video {
+        top: auto;
+        height: clamp(240px, 82vw, 360px);
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 38%);
+        mask-image: linear-gradient(180deg, transparent 0, #000 38%);
+    }
     .hero-bg-img {
-        background-position: 70% bottom;
+        background-position: 50% 62%;
     }
-    .hero-bg::after {
-        background: linear-gradient(180deg, rgba(255, 255, 255, .95) 0%, rgba(255, 255, 255, .88) 55%, rgba(255, 255, 255, .25) 80%, rgba(255, 255, 255, 0) 100%);
+    .hero-video {
+        object-position: 50% 62%;
     }
+    .hero-toggle {
+        right: 16px;
+        bottom: 16px;
+    }
+    .hero-bg::after,
     html[data-theme="dark"] .hero-bg::after {
-        background: linear-gradient(180deg, rgba(10, 13, 18, .94) 0%, rgba(10, 13, 18, .86) 55%, rgba(10, 13, 18, .3) 80%, rgba(10, 13, 18, 0) 100%);
+        background: none;
     }
     .hero-text {
         padding: 36px 0 clamp(200px, 60vw, 330px);

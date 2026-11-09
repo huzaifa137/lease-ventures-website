@@ -96,26 +96,27 @@
 
         <section class="hero" id="top">
             <div class="hero-bg">
-                <div class="hero-bg-img" role="img" aria-label="Toyota Hilux 4TREK pickups parked on a pebble beach"></div>
+                <!-- Poster shows instantly; the video fades in over it once it is actually playing -->
+                <div class="hero-bg-img" role="img" aria-label="Toyota Hilux 4TREK pickups driving along a pebble beach"></div>
+                <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="images/racingcars-poster.jpg">
+                    <source src="videos/racingcars-hero-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
+                    <source src="videos/racingcars-hero.mp4" type="video/mp4" />
+                </video>
                 <div class="hero-grid"></div>
             </div>
             <div class="container">
                 <div class="hero-text">
-                    <div class="hero-badge"><span class="dot"></span>Kampala, Uganda &middot; Automotive Solutions</div>
                     <h1>WE KEEP <span class="accent">YOU</span><br><span class="italic">moving.</span></h1>
-                    <p class="hero-sub">Toyota vehicles, Honda, Yamaha &amp; Lifan motorcycles, a premium garage, genuine spare parts, clearing &amp; forwarding and driver training &mdash; all in one place.</p>
                     <div class="hero-actions">
                         <a href="services.html" class="btn btn-primary">Explore Our Offerings <i
                 class="fa-solid fa-arrow-right"></i></a>
                         <a href="contact.html#quote" class="btn btn-outline">Get a Quote</a>
                     </div>
-                    <div class="hero-chips">
-                        <span><i class="fa-solid fa-circle-check"></i> Ugandan-owned</span>
-                        <span><i class="fa-solid fa-circle-check"></i> URSB registered</span>
-                        <span><i class="fa-solid fa-circle-check"></i> PPDA listed supplier</span>
-                    </div>
                 </div>
             </div>
+            <button class="hero-toggle" id="heroToggle" type="button" aria-label="Pause background video" hidden>
+                <i class="fa-solid fa-pause"></i>
+            </button>
         </section>
 
         <section class="stats">
