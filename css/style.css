@@ -656,7 +656,7 @@ html[data-theme="dark"] .hero-bg-img {
     object-fit: cover;
     object-position: 62% bottom;
     opacity: 0;
-    transition: opacity .9s ease;
+    transition: opacity 1s ease;
     /* own compositor layer: keeps decoding off the main thread's layout/paint work */
     transform: translateZ(0) scale(1.04);
     will-change: transform, opacity;

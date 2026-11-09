@@ -30,38 +30,71 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 1024) setMenu(false); });
   }
 
-  // hero video — loads only when it is safe to, never blocks the page
-  var hv = $('#heroVideo'), ht = $('#heroToggle');
+  // hero video — two clips that crossfade into each other forever; loads only when it is safe to
+  var hv = $('#heroVideo'), hv2 = $('#heroVideo2'), ht = $('#heroToggle');
   if (hv) {
+    var clips = hv2 ? [hv, hv2] : [hv];
+    var FADE = 1000; // ms — keep in sync with the opacity transition in css/style.css (.hero-video)
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var saveData = conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || ''));
-    var userPaused = false, inView = true, started = false;
+    var userPaused = false, inView = true, started = false, cur = 0, switching = false;
 
     var setToggle = function (playing) {
       if (!ht) return;
       ht.innerHTML = '<i class="fa-solid ' + (playing ? 'fa-pause' : 'fa-play') + '"></i>';
       ht.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
     };
-    var play = function () {
-      var p = hv.play();
+    var safePlay = function (v) {
+      var p = v.play();
       if (p && p.catch) p.catch(function () { /* autoplay blocked (e.g. low-power mode): poster stays */ });
     };
     var sync = function () {
       if (!started) return;
-      if (!userPaused && inView && !document.hidden) play(); else hv.pause();
+      if (!userPaused && inView && !document.hidden) safePlay(clips[cur]);
+      else clips.forEach(function (v) { v.pause(); });
     };
 
-    // fade the video in only once frames are really being shown (no black flash)
+    // fade the first clip in only once frames are really being shown (no black flash)
     hv.addEventListener('playing', function () {
       hv.classList.add('is-playing');
       if (ht) { ht.hidden = false; setToggle(true); }
     });
 
+    // crossfade to the other clip when the current one is about to end
+    var goNext = function () {
+      var to = (cur + 1) % clips.length, from = clips[cur], next = clips[to];
+      switching = true;
+      next.currentTime = 0;
+      safePlay(next);
+      if (to === 1) next.classList.add('is-playing');           // 2nd clip sits above: fade it in
+      else clips[1].classList.remove('is-playing');             // back to the 1st: fade the 2nd out
+      cur = to;
+      setTimeout(function () {                                   // after the fade, stop the hidden clip
+        from.pause();
+        try { from.currentTime = 0; } catch (e) { }
+        switching = false;
+        sync();
+      }, FADE + 50);
+    };
+    var onTime = function () {
+      var v = clips[cur];
+      if (switching || !v.duration || userPaused) return;
+      if (v.duration - v.currentTime > FADE / 1000 + 0.3) return;
+      var next = clips[(cur + 1) % clips.length];
+      if (next !== v && next.readyState >= 3) goNext(); // not buffered yet? keep looping this clip and retry
+    };
+    clips.forEach(function (v) { v.addEventListener('timeupdate', function () { if (v === clips[cur]) onTime(); }); });
+
     if (!reduceMotion && !saveData) {
       var start = function () {
         if (started) return;
         started = true; hv.load(); sync();
+        // fetch the second clip only after the first is on screen, so the two never compete
+        if (hv2) hv.addEventListener('playing', function once() {
+          hv.removeEventListener('playing', once);
+          setTimeout(function () { hv2.preload = 'auto'; hv2.load(); }, 800);
+        });
       };
       // start after the page has loaded so the video never competes with CSS, fonts or images
       if (document.readyState === 'complete') start();
@@ -86,18 +119,17 @@
     // subtle pointer parallax (desktop only, transform-only so it stays smooth)
     if (!reduceMotion && window.matchMedia && window.matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
       var heroEl = $('.hero'), raf = 0, tx = 0, ty = 0;
+      var move = function (t) { clips.forEach(function (v) { v.style.transform = t; }); };
       heroEl.addEventListener('mousemove', function (e) {
         var r = heroEl.getBoundingClientRect();
         tx = ((e.clientX - r.left) / r.width - .5) * -16;
         ty = ((e.clientY - r.top) / r.height - .5) * -10;
         if (!raf) raf = requestAnimationFrame(function () {
           raf = 0;
-          hv.style.transform = 'translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) scale(1.04)';
+          move('translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) scale(1.04)');
         });
       }, { passive: true });
-      heroEl.addEventListener('mouseleave', function () {
-        hv.style.transform = '';
-      });
+      heroEl.addEventListener('mouseleave', function () { move(''); });
     }
   }
 
