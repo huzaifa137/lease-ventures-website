@@ -1,79 +1,69 @@
-/* Lease Ventures — site scripts. Theme: light by default, choice remembered. */
+/* Lease Ventures — site behaviour */
 (function () {
-  var KEY = 'lv-theme', root = document.documentElement;
-  function apply(t) { root.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light'); }
-  function saved() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  apply(saved());
-  window.addEventListener('storage', function (e) { if (e.key === KEY) apply(e.newValue); });
+  var WA = '256782140304';
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var $ = function (s, c) { return (c || document).querySelector(s); };
-    var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  // navbar shadow + back-to-top
+  var nav = $('.nav'), top = $('.to-top');
+  function onScroll() {
+    var y = window.scrollY || 0;
+    if (nav) nav.classList.toggle('scrolled', y > 30);
+    if (top) top.classList.toggle('visible', y > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if (top) top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-    /* theme toggle */
-    var tg = $('#themeToggle');
-    function sync() {
-      var d = root.getAttribute('data-theme') === 'dark';
-      tg.setAttribute('aria-pressed', d); tg.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); tg.title = tg.getAttribute('aria-label');
-    }
-    if (tg) { sync(); tg.addEventListener('click', function () {
-      var n = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      apply(n); try { localStorage.setItem(KEY, n); } catch (e) {} sync();
-    }); }
-
-    /* navbar */
-    var nav = $('#nav'), links = $('#navLinks'), burger = $('#burger');
-    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
-    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
-    burger.addEventListener('click', function () {
-      var o = links.classList.toggle('open'); burger.classList.toggle('open', o); burger.setAttribute('aria-expanded', o);
+  // mobile menu + accordions
+  var ham = $('#hamburger'), mob = $('#mobileMenu');
+  function setMenu(open) {
+    mob.classList.toggle('open', open); ham.classList.toggle('open', open);
+    ham.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : '';
+    if (nav && open) nav.classList.add('scrolled'); else onScroll();
+  }
+  if (ham && mob) {
+    ham.addEventListener('click', function () { setMenu(!mob.classList.contains('open')); });
+    $$('.m-toggle', mob).forEach(function (b) {
+      b.addEventListener('click', function () { b.parentNode.classList.toggle('open'); });
     });
-    $$('.has-dd > button').forEach(function (b) {
-      b.addEventListener('click', function (e) {
-        var li = b.parentNode, open = !li.classList.contains('open');
-        $$('.has-dd.open').forEach(function (x) { x.classList.remove('open'); x.firstElementChild.setAttribute('aria-expanded', 'false'); });
-        li.classList.toggle('open', open); b.setAttribute('aria-expanded', open); e.stopPropagation();
+    $$('a', mob).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 1024) setMenu(false); });
+  }
+
+  // reveal on scroll
+  var items = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else items.forEach(function (el) { el.classList.add('visible'); });
+
+  // product filters
+  $$('.tabs').forEach(function (tabs) {
+    var scope = tabs.parentNode;
+    $$('.tab', tabs).forEach(function (t) {
+      t.addEventListener('click', function () {
+        $$('.tab', tabs).forEach(function (x) { x.classList.remove('active'); });
+        t.classList.add('active');
+        var f = t.getAttribute('data-filter');
+        $$('.product', scope).forEach(function (p) {
+          p.classList.toggle('hide', f !== 'all' && p.getAttribute('data-cat') !== f);
+        });
       });
     });
-    document.addEventListener('click', function (e) { if (!e.target.closest('.has-dd')) $$('.has-dd.open').forEach(function (x) { x.classList.remove('open'); }); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') $$('.has-dd.open').forEach(function (x) { x.classList.remove('open'); }); });
-    $$('.nav-links a').forEach(function (a) { a.addEventListener('click', function () { links.classList.remove('open'); burger.classList.remove('open'); }); });
+  });
 
-    /* scroll reveal */
-    var rv = $$('.reveal');
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }); }, { threshold: .12 });
-      rv.forEach(function (el) { io.observe(el); });
-    } else rv.forEach(function (el) { el.classList.add('visible'); });
-
-    /* product filters */
-    $$('.filters').forEach(function (f) {
-      var items = $$('.product[data-cat]');
-      $$('.filter-btn', f).forEach(function (b) { b.addEventListener('click', function () {
-        $$('.filter-btn', f).forEach(function (x) { x.classList.remove('active'); }); b.classList.add('active');
-        var c = b.getAttribute('data-filter');
-        items.forEach(function (it) { it.classList.toggle('hide', c !== 'all' && it.getAttribute('data-cat') !== c); });
-      }); });
-    });
-
-    /* contact form -> WhatsApp or email */
-    var form = $('#contactForm');
-    if (form) {
-      var q = new URLSearchParams(location.search).get('interest');
-      if (q) {
-        var sel = form.elements.interest, found = false;
-        for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text === q) { sel.selectedIndex = i; found = true; }
-        if (!found) { sel.add(new Option(q, q, true, true)); }
-      }
-      function msg() {
-        var f = form.elements;
-        return 'Hello Lease Ventures, I would like to make an enquiry.\n\nName: ' + f.name.value + '\nPhone: ' + f.phone.value + (f.email.value ? '\nEmail: ' + f.email.value : '') + '\nInterested in: ' + f.interest.value + '\n\n' + f.message.value;
-      }
-      function ok() { if (!form.checkValidity()) { form.reportValidity(); return false; } return true; }
-      $('#sendWa').addEventListener('click', function () { if (ok()) window.open('https://wa.me/256782140304?text=' + encodeURIComponent(msg()), '_blank', 'noopener'); });
-      $('#sendMail').addEventListener('click', function () { if (ok()) location.href = 'mailto:info@leaseventures.co.ug?subject=' + encodeURIComponent('Enquiry: ' + form.elements.interest.value) + '&body=' + encodeURIComponent(msg()); });
-      form.addEventListener('submit', function (e) { e.preventDefault(); });
-    }
-    var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
+  // quote form -> WhatsApp
+  var form = $('#quoteForm');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (n) { return (form.elements[n] && form.elements[n].value || '').trim(); };
+    var msg = 'Hello Lease Ventures, I would like a quotation.\n\n' +
+      'Name: ' + v('name') + '\n' +
+      (v('company') ? 'Organisation: ' + v('company') + '\n' : '') +
+      'Phone: ' + v('phone') + '\n' +
+      'Interested in: ' + v('service') + '\n\n' + v('message');
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
 })();

@@ -1,53 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our Services | Lease Ventures (U) Ltd</title>
-<meta name="description" content="Vehicle and motorcycle sales and leasing, garage services, spare parts, accessories, driver training and clearing and forwarding." />
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<script>try{if(localStorage.getItem('lv-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Lease Ventures (U) Ltd</title>
+  <meta name="description" content="Motor vehicle and motorcycle sales & leasing, garage services, spare parts, accessories, clearing & forwarding and driver training in Kampala." />
+  <meta name="theme-color" content="#F0203A" />
+  <meta property="og:title" content="Our Services | Lease Ventures (U) Ltd" />
+  <meta property="og:description" content="Motor vehicle and motorcycle sales & leasing, garage services, spare parts, accessories, clearing & forwarding and driver training in Kampala." />
+  <meta property="og:image" content="images/hero.jpg" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<nav class="nav" id="nav" aria-label="Main">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand" aria-label="Lease Ventures home"><img src="images/logo.png" alt="Lease Ventures logo" /><span>Lease Ventures</span></a>
-    <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">About <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="about.html#who"><i class="fa-solid fa-building"></i>Who We Are</a><a href="about.html#vision"><i class="fa-solid fa-bullseye"></i>Vision & Mission</a><a href="about.html#values"><i class="fa-solid fa-gem"></i>Our Values</a><a href="about.html#team"><i class="fa-solid fa-people-group"></i>Our Team</a><a href="about.html#industries"><i class="fa-solid fa-industry"></i>Industries We Serve</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">Fleet <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false" class="active">Services <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="services.html"><i class="fa-solid fa-list-check"></i>All Services</a><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="parts-accessories.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a></div></li><li><a href="contact.html">Contact</a></li></ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="knob"><i class="fa-solid fa-sun ico-sun"></i><i class="fa-solid fa-moon ico-moon"></i></span></button>
-      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Lease Ventures – Home">
+        <img src="images/logo.png" alt="Lease Ventures logo" width="52" height="48" />
+        <span>Lease Ventures</span>
+      </a>
+      <ul class="menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li class="has-sub"><button type="button" aria-haspopup="true">Vehicles <i class="fa-solid fa-chevron-down"></i></button><div class="sub"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></li><li class="has-sub active"><button type="button" aria-haspopup="true">Services <i class="fa-solid fa-chevron-down"></i></button><div class="sub"><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="spare-parts.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a><a href="services.html" class="current"><i class="fa-solid fa-grip"></i>All Services</a></div></li><li><a href="contact.html">Contact</a></li></ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="knob">
+            <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="ico-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span>
+        </button>
+        <a href="tel:+256782140304" class="btn btn-outline btn-sm btn-call"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="contact.html#quote" class="btn btn-primary btn-sm">Get a Quote</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
-    <button class="hamburger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<header class="page-hero"><div class="page-hero-img" style="background-image:url('images/garage-collage.jpg')"></div>
-  <div class="container"><div class="crumbs"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i>Services</div>
-  <h1>Our Services</h1><p>Everything your vehicle or motorcycle needs, from showroom to garage to border.</p></div></header>
-<section class="section"><div class="container"><div class="section-head center"><h2 class="section-title">Core Offerings</h2><p class="lead">Seven service lines under one roof.</p></div><div class="offer-grid"><div class="card reveal"><div class="ico"><i class="fa-solid fa-car-side"></i></div><h3>Motor Vehicle Sales & Leasing</h3><p>Toyota Prado, Hilux and Fortuner station wagons and pick-ups, built for our roads.</p><a href="vehicles.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-motorcycle"></i></div><h3>Motorcycle Sales & Leasing</h3><p>Honda, Yamaha and Lifan motorcycles that deliver durability and performance.</p><a href="motorcycles.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Garage Services</h3><p>Servicing, diagnostics, tyres, brakes, 3D alignment and more by experienced technicians.</p><a href="garage.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-gears"></i></div><h3>Genuine Spare Parts</h3><p>Genuine parts for Toyota vehicles and Honda, Yamaha and Lifan motorcycles.</p><a href="parts-accessories.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-shield-halved"></i></div><h3>Automotive Accessories</h3><p>Protective gear, tracking devices, security systems and comfort add-ons.</p><a href="parts-accessories.html#accessories" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-graduation-cap"></i></div><h3>Defensive & Safe Driver Training</h3><p>After-sales driver and rider training that protects people and machines.</p><a href="driver-training.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div><div class="card reveal"><div class="ico"><i class="fa-solid fa-ship"></i></div><h3>Clearing & Forwarding</h3><p>Customs clearing, registration, transfers and number plates handled for you.</p><a href="clearing-forwarding.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a></div></div></div></section>
-<section class="section alt"><div class="container"><div class="section-head center"><h2 class="section-title">Our Process</h2><p class="lead">How a garage visit works with us.</p></div><div class="steps"><div class="step reveal"><div class="ico"><i class="fa-solid fa-calendar-check"></i></div><h3>Book Service Appointment</h3><p>Call or visit us to book a slot.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-clipboard-list"></i></div><h3>Diagnosis Report & Quote</h3><p>We diagnose and quote the work.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-user-check"></i></div><h3>Job Allocation</h3><p>Your job goes to the right technician.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Repair Process</h3><p>Work is carried out professionally.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-award"></i></div><h3>Quality Check</h3><p>Every job is checked before release.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-box-open"></i></div><h3>Delivery</h3><p>Your vehicle is handed back to you.</p></div><div class="step reveal"><div class="ico"><i class="fa-solid fa-phone-volume"></i></div><h3>Follow Up</h3><p>We call to make sure you are satisfied.</p></div></div></div></section><section class="cta"><div class="container"><div><h2>Ready to get moving?</h2><p>Talk to our team about vehicles, motorcycles, parts, servicing or clearing — we will get back to you quickly.</p></div>
-  <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="tel:+256782140304" class="btn btn-ghost btn-outline"><i class="fa-solid fa-phone"></i>+256 782 140304</a></div></div></section>
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-brand"><img src="images/logo.png" alt="Lease Ventures logo" />
-      <p>Lease Ventures (U) Ltd — we keep you moving. Quality automotive solutions to the utmost satisfaction of our customers.</p></div>
-    <div><h4>Fleet &amp; Parts</h4><ul>
-      <li><a href="vehicles.html">Motor Vehicles</a></li><li><a href="motorcycles.html">Motorcycles</a></li>
-      <li><a href="parts-accessories.html">Spare Parts &amp; Accessories</a></li></ul></div>
-    <div><h4>Services</h4><ul>
-      <li><a href="garage.html">Garage Services</a></li><li><a href="clearing-forwarding.html">Clearing &amp; Forwarding</a></li>
-      <li><a href="driver-training.html">Driver &amp; Rider Training</a></li><li><a href="about.html">About Us</a></li></ul></div>
-    <div><h4>Visit &amp; Contact</h4><ul>
-      <li><i class="fa-solid fa-location-dot"></i>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket), Kampala</li>
-      <li><i class="fa-solid fa-envelope"></i>P. O. Box 134904, Kampala</li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:+256782140304">+256 782 140304</a>, <a href="tel:+256393236168">+256 393 236168</a></li>
-      <li><i class="fa-solid fa-at"></i><a href="mailto:info@leaseventures.co.ug">info@leaseventures.co.ug</a></li></ul></div>
-  </div>
-  <div class="container footer-bottom"><span>&copy; <span id="year">2026</span> Lease Ventures (U) Ltd. All rights reserved.</span>
-    <span>URSB No. 80020002067978 &nbsp;|&nbsp; PPDA No. PRV/SPLS/26194/SEP/19</span></div>
-</footer>
-<script src="js/main.js"></script>
+  </header>
+  <nav class="mobile" id="mobileMenu" aria-label="Mobile menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><div class="m-group"><button type="button" class="m-toggle">Vehicles <i class="fa-solid fa-chevron-down"></i></button><div class="m-sub"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></div><div class="m-group open"><button type="button" class="m-toggle">Services <i class="fa-solid fa-chevron-down"></i></button><div class="m-sub"><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="spare-parts.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a><a href="services.html"><i class="fa-solid fa-grip"></i>All Services</a></div></div><a href="contact.html">Contact</a>
+    <a href="contact.html#quote" class="btn btn-primary">Get a Quote</a>
+    <a href="tel:+256782140304" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call +256 782 140304</a>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="hero-grid"></div>
+      <div class="container ph-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Services</span></nav>
+          <h1>OUR <span>SERVICES</span></h1>
+          <p class="lead">Seven integrated offerings covering every part of owning, running and moving a vehicle or motorcycle in Uganda.</p>
+          <div class="ph-actions"><a href="contact.html#quote" class="btn btn-primary">Request a Quote</a><a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="btn btn-outline" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div>
+        </div>
+        <div class="ph-media"><img src="images/carrier.jpg" alt="A Lease Ventures car carrier delivering vehicles" /><div class="ph-badge"><small>7 core</small>Offerings</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Core Offerings</span>
+          <h2 class="title">EVERYTHING YOU NEED, <span>UNDER ONE ROOF</span></h2>
+          <p class="lead">Choose a service to see what&rsquo;s included and how to get started.</p>
+        </div>
+        <div class="offers"><article class="offer reveal d1">
+            <div class="offer-img"><img src="images/prado-new.jpg" alt="Motor Vehicle Sales & Leasing" loading="lazy" /><span class="num">01</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-car-side"></i></div>
+              <h3>Motor Vehicle Sales & Leasing</h3>
+              <p>Toyota Prado, Hilux and Fortuner station wagons and pick-ups, built for our roads and driver comfort.</p>
+              <a href="vehicles.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d2">
+            <div class="offer-img"><img src="images/bikes-warehouse.jpg" alt="Motorcycle Sales & Leasing" loading="lazy" /><span class="num">02</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-motorcycle"></i></div>
+              <h3>Motorcycle Sales & Leasing</h3>
+              <p>Durable, fuel-efficient Honda, Yamaha and Lifan motorcycles that pair durability with performance.</p>
+              <a href="motorcycles.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d3">
+            <div class="offer-img"><img src="images/mechanic.jpg" alt="Premium Garage Services" loading="lazy" /><span class="num">03</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3>Premium Garage Services</h3>
+              <p>Experienced technicians and modern diagnostic equipment for reliable maintenance and repair.</p>
+              <a href="garage.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d1">
+            <div class="offer-img"><img src="images/shop-parts.jpg" alt="Genuine Spare Parts" loading="lazy" /><span class="num">04</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
+              <h3>Genuine Spare Parts</h3>
+              <p>Genuine parts for Toyota vehicles and Honda, Yamaha and Lifan motorcycles, professionally fitted.</p>
+              <a href="spare-parts.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d2">
+            <div class="offer-img"><img src="images/accessories.jpg" alt="Automotive Accessories" loading="lazy" /><span class="num">05</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-helmet-safety"></i></div>
+              <h3>Automotive Accessories</h3>
+              <p>Protective gear, tracking devices, security systems, utility add-ons and comfort enhancements.</p>
+              <a href="spare-parts.html#accessories" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d3">
+            <div class="offer-img"><img src="images/driving-lesson.jpg" alt="Defensive & Safe Driver Training" loading="lazy" /><span class="num">06</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3>Defensive & Safe Driver Training</h3>
+              <p>Driver and rider training that builds safer, more confident people behind the wheel and handlebars.</p>
+              <a href="driver-training.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article><article class="offer reveal d1">
+            <div class="offer-img"><img src="images/carrier.jpg" alt="Clearing & Forwarding" loading="lazy" /><span class="num">07</span></div>
+            <div class="offer-body">
+              <div class="icon-box"><i class="fa-solid fa-ship"></i></div>
+              <h3>Clearing & Forwarding</h3>
+              <p>Customs clearing, registration, transfers and number plates — your assets moved seamlessly.</p>
+              <a href="clearing-forwarding.html" class="link-arrow">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">How It Works</span>
+          <h2 class="title">OUR <span>PROCESS</span></h2>
+          <p class="lead">A clear, simple path from booking to follow-up — so you always know what happens next.</p>
+        </div>
+        <div class="steps"><div class="step reveal d1"><div class="step-icon"><i class="fa-solid fa-calendar-check"></i><sup>1</sup></div><h4>Book Service Appointment</h4></div><div class="step reveal d2"><div class="step-icon"><i class="fa-solid fa-clipboard-list"></i><sup>2</sup></div><h4>Diagnosis Report & Quote</h4></div><div class="step reveal d3"><div class="step-icon"><i class="fa-solid fa-users-gear"></i><sup>3</sup></div><h4>Job Allocation</h4></div><div class="step reveal d1"><div class="step-icon"><i class="fa-solid fa-screwdriver-wrench"></i><sup>4</sup></div><h4>Repair Process</h4></div><div class="step reveal d2"><div class="step-icon"><i class="fa-solid fa-award"></i><sup>5</sup></div><h4>Quality Check</h4></div><div class="step reveal d3"><div class="step-icon"><i class="fa-solid fa-truck-fast"></i><sup>6</sup></div><h4>Delivery</h4></div><div class="step reveal d1"><div class="step-icon"><i class="fa-solid fa-phone-volume"></i><sup>7</sup></div><h4>Follow up</h4></div></div>
+        <div class="center reveal" style="margin-top:48px"><a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20book%20a%20garage%20service%20appointment." class="btn btn-primary" target="_blank" rel="noopener"><i class="fa-solid fa-calendar-check"></i> Book a Service</a></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div class="reveal"><h2>READY TO <span style="color:#fff;text-shadow:0 0 0 #fff">MOVE</span> WITH US?</h2><p>Talk to our team about vehicles, motorcycles, garage services, spare parts and more.</p></div>
+        <div class="cta-actions reveal d1">
+          <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20make%20an%20enquiry." class="btn btn-white" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="tel:+256782140304" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> +256 782 140304</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand"><img src="images/logo.png" alt="Lease Ventures logo" /><b>LEASE VENTURES<br>(U) LTD</b></div>
+          <p class="footer-desc">A Ugandan-owned automotive company delivering quality automotive solutions to the utmost satisfaction of our customers.</p>
+          <p class="footer-tag">We keep you moving.</p>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>What We Do</h5>
+          <ul>
+            <li><a href="vehicles.html">Motor Vehicles</a></li>
+            <li><a href="motorcycles.html">Motorcycles</a></li>
+            <li><a href="garage.html">Garage Services</a></li>
+            <li><a href="spare-parts.html">Spare Parts &amp; Accessories</a></li>
+            <li><a href="clearing-forwarding.html">Clearing &amp; Forwarding</a></li>
+            <li><a href="driver-training.html">Driver &amp; Rider Training</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Get in Touch</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i><span>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket)<br>P. O. Box 134904, Kampala</span></li>
+            <li><i class="fa-solid fa-phone"></i><span><a href="tel:+256782140304">+256 782 140304</a><br><a href="tel:+256393236168">+256 393 236168</a></span></li>
+            <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+            <li><i class="fa-solid fa-globe"></i><span>www.leaseventures.co.ug</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 <span>Lease Ventures (U) Ltd</span>. All rights reserved.</p>
+        <p>URSB No. 80020002067978 &nbsp;·&nbsp; PPDA No. PRV/SPLS/26194/SEP/19</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20make%20an%20enquiry." class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button class="to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

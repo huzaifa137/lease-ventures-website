@@ -1,64 +1,226 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Toyota Vehicles for Sale & Lease | Lease Ventures (U) Ltd</title>
-<meta name="description" content="Toyota Prado, Hilux and Fortuner, new and previous generation, for sale and lease from Lease Ventures (U) Ltd, Kampala." />
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<script>try{if(localStorage.getItem('lv-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motor Vehicle Sales & Leasing | Toyota Prado, Hilux, Fortuner | Lease Ventures</title>
+  <meta name="description" content="Toyota Prado, Hilux and Fortuner — new and previous generation — for sale and lease in Kampala, Uganda. Durable, reliable and fuel efficient." />
+  <meta name="theme-color" content="#F0203A" />
+  <meta property="og:title" content="Motor Vehicle Sales & Leasing | Toyota Prado, Hilux, Fortuner | Lease Ventures" />
+  <meta property="og:description" content="Toyota Prado, Hilux and Fortuner — new and previous generation — for sale and lease in Kampala, Uganda. Durable, reliable and fuel efficient." />
+  <meta property="og:image" content="images/hero.jpg" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<nav class="nav" id="nav" aria-label="Main">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand" aria-label="Lease Ventures home"><img src="images/logo.png" alt="Lease Ventures logo" /><span>Lease Ventures</span></a>
-    <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">About <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="about.html#who"><i class="fa-solid fa-building"></i>Who We Are</a><a href="about.html#vision"><i class="fa-solid fa-bullseye"></i>Vision & Mission</a><a href="about.html#values"><i class="fa-solid fa-gem"></i>Our Values</a><a href="about.html#team"><i class="fa-solid fa-people-group"></i>Our Team</a><a href="about.html#industries"><i class="fa-solid fa-industry"></i>Industries We Serve</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false" class="active">Fleet <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></li><li class="has-dd"><button type="button" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down caret"></i></button><div class="dd"><a href="services.html"><i class="fa-solid fa-list-check"></i>All Services</a><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="parts-accessories.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a></div></li><li><a href="contact.html">Contact</a></li></ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="knob"><i class="fa-solid fa-sun ico-sun"></i><i class="fa-solid fa-moon ico-moon"></i></span></button>
-      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Lease Ventures – Home">
+        <img src="images/logo.png" alt="Lease Ventures logo" width="52" height="48" />
+        <span>Lease Ventures</span>
+      </a>
+      <ul class="menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li class="has-sub active"><button type="button" aria-haspopup="true">Vehicles <i class="fa-solid fa-chevron-down"></i></button><div class="sub"><a href="vehicles.html" class="current"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></li><li class="has-sub"><button type="button" aria-haspopup="true">Services <i class="fa-solid fa-chevron-down"></i></button><div class="sub"><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="spare-parts.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a><a href="services.html"><i class="fa-solid fa-grip"></i>All Services</a></div></li><li><a href="contact.html">Contact</a></li></ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="knob">
+            <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="ico-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span>
+        </button>
+        <a href="tel:+256782140304" class="btn btn-outline btn-sm btn-call"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="contact.html#quote" class="btn btn-primary btn-sm">Get a Quote</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
-    <button class="hamburger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<header class="page-hero"><div class="page-hero-img" style="background-image:url('images/prado-new.jpg')"></div>
-  <div class="container"><div class="crumbs"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i>Motor Vehicles</div>
-  <h1>Motor Vehicle Sales & Leasing</h1><p>Toyota station wagons and pick-ups: durable, reliable and fuel efficient for every terrain.</p></div></header>
-<section class="section"><div class="container"><div class="section-head"><h2 class="section-title">Reliable Vehicles for Every Terrain</h2><p class="lead">We offer Toyota motor vehicles (station wagons and pick-ups) designed to be versatile and reliable for our rough roads and terrain, with a focus on driver comfort.</p></div>
-<div class="filters"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="Prado">Prado</button><button class="filter-btn" data-filter="Hilux">Hilux</button><button class="filter-btn" data-filter="Fortuner">Fortuner</button></div>
-<div class="grid g3"><article class="product reveal" data-cat="Prado"><div class="product-img cover"><img src="images/prado-new.jpg" alt="Toyota Prado" loading="lazy" /><span class="tag">New Generation</span></div>
-  <div class="product-body"><h3>Toyota Prado</h3><p>The latest Prado: a tough station wagon with a focus on driver comfort.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Prado%20(New%20Generation)">Enquire now</a></div></article><article class="product reveal" data-cat="Prado"><div class="product-img cover"><img src="images/prado-previous.jpg" alt="Toyota Prado" loading="lazy" /><span class="tag">Previous Generation</span></div>
-  <div class="product-body"><h3>Toyota Prado</h3><p>The proven Prado station wagon, durable and versatile on rough roads.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Prado%20(Previous%20Generation)">Enquire now</a></div></article><article class="product reveal" data-cat="Hilux"><div class="product-img"><img src="images/hilux-new.jpg" alt="Toyota Hilux" loading="lazy" /><span class="tag">New Generation</span></div>
-  <div class="product-body"><h3>Toyota Hilux</h3><p>The new-generation Hilux pick-up: reliable, fuel efficient and versatile.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Hilux%20(New%20Generation)">Enquire now</a></div></article><article class="product reveal" data-cat="Hilux"><div class="product-img"><img src="images/hilux-previous.jpg" alt="Toyota Hilux" loading="lazy" /><span class="tag">Previous Generation</span></div>
-  <div class="product-body"><h3>Toyota Hilux</h3><p>The trusted Hilux pick-up that handles our roads and terrain with ease.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Hilux%20(Previous%20Generation)">Enquire now</a></div></article><article class="product reveal" data-cat="Fortuner"><div class="product-img"><img src="images/fortuner-new.jpg" alt="Toyota Fortuner" loading="lazy" /><span class="tag">New Generation</span></div>
-  <div class="product-body"><h3>Toyota Fortuner</h3><p>A versatile and reliable station wagon for family, business and fleet use.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Fortuner%20(New%20Generation)">Enquire now</a></div></article><article class="product reveal" data-cat="Fortuner"><div class="product-img"><img src="images/fortuner-previous.jpg" alt="Toyota Fortuner" loading="lazy" /><span class="tag">Previous Generation</span></div>
-  <div class="product-body"><h3>Toyota Fortuner</h3><p>Dependable and comfortable, designed for every terrain.</p><a class="btn btn-outline btn-sm" href="contact.html?interest=Toyota%20Fortuner%20(Previous%20Generation)">Enquire now</a></div></article></div></div></section>
-<section class="section alt"><div class="container">
-<div class="split reveal white-media"><div class="split-media"><img src="images/prado-white.jpg" alt="Toyota Land Cruiser Prado" loading="lazy" /></div>
-  <div class="split-body"><h2 class="section-title">Buy or Lease</h2><p>Whether you are an individual, a company or an institution, we offer Toyota vehicles for sale and for lease. Tell us what you need and we will prepare a quote.</p><ul class="ticks"><li><i class="fa-solid fa-check"></i><span>Durable and reliable</span></li><li><i class="fa-solid fa-check"></i><span>Fuel efficient</span></li><li><i class="fa-solid fa-check"></i><span>Built for rough roads and terrain</span></li><li><i class="fa-solid fa-check"></i><span>Driver comfort</span></li><li><i class="fa-solid fa-check"></i><span>Genuine parts and garage support after purchase</span></li></ul><a href="contact.html?interest=Motor%20Vehicle%20Sales%20%26%20Leasing" class="btn btn-primary">Request a Quote</a></div></div>
-</div></section><section class="cta"><div class="container"><div><h2>Ready to get moving?</h2><p>Talk to our team about vehicles, motorcycles, parts, servicing or clearing — we will get back to you quickly.</p></div>
-  <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="tel:+256782140304" class="btn btn-ghost btn-outline"><i class="fa-solid fa-phone"></i>+256 782 140304</a></div></div></section>
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-brand"><img src="images/logo.png" alt="Lease Ventures logo" />
-      <p>Lease Ventures (U) Ltd — we keep you moving. Quality automotive solutions to the utmost satisfaction of our customers.</p></div>
-    <div><h4>Fleet &amp; Parts</h4><ul>
-      <li><a href="vehicles.html">Motor Vehicles</a></li><li><a href="motorcycles.html">Motorcycles</a></li>
-      <li><a href="parts-accessories.html">Spare Parts &amp; Accessories</a></li></ul></div>
-    <div><h4>Services</h4><ul>
-      <li><a href="garage.html">Garage Services</a></li><li><a href="clearing-forwarding.html">Clearing &amp; Forwarding</a></li>
-      <li><a href="driver-training.html">Driver &amp; Rider Training</a></li><li><a href="about.html">About Us</a></li></ul></div>
-    <div><h4>Visit &amp; Contact</h4><ul>
-      <li><i class="fa-solid fa-location-dot"></i>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket), Kampala</li>
-      <li><i class="fa-solid fa-envelope"></i>P. O. Box 134904, Kampala</li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:+256782140304">+256 782 140304</a>, <a href="tel:+256393236168">+256 393 236168</a></li>
-      <li><i class="fa-solid fa-at"></i><a href="mailto:info@leaseventures.co.ug">info@leaseventures.co.ug</a></li></ul></div>
-  </div>
-  <div class="container footer-bottom"><span>&copy; <span id="year">2026</span> Lease Ventures (U) Ltd. All rights reserved.</span>
-    <span>URSB No. 80020002067978 &nbsp;|&nbsp; PPDA No. PRV/SPLS/26194/SEP/19</span></div>
-</footer>
-<script src="js/main.js"></script>
+  </header>
+  <nav class="mobile" id="mobileMenu" aria-label="Mobile menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><div class="m-group open"><button type="button" class="m-toggle">Vehicles <i class="fa-solid fa-chevron-down"></i></button><div class="m-sub"><a href="vehicles.html"><i class="fa-solid fa-car-side"></i>Motor Vehicles</a><a href="motorcycles.html"><i class="fa-solid fa-motorcycle"></i>Motorcycles</a></div></div><div class="m-group"><button type="button" class="m-toggle">Services <i class="fa-solid fa-chevron-down"></i></button><div class="m-sub"><a href="garage.html"><i class="fa-solid fa-screwdriver-wrench"></i>Garage Services</a><a href="spare-parts.html"><i class="fa-solid fa-gears"></i>Spare Parts & Accessories</a><a href="clearing-forwarding.html"><i class="fa-solid fa-ship"></i>Clearing & Forwarding</a><a href="driver-training.html"><i class="fa-solid fa-graduation-cap"></i>Driver & Rider Training</a><a href="services.html"><i class="fa-solid fa-grip"></i>All Services</a></div></div><a href="contact.html">Contact</a>
+    <a href="contact.html#quote" class="btn btn-primary">Get a Quote</a>
+    <a href="tel:+256782140304" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call +256 782 140304</a>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="hero-grid"></div>
+      <div class="container ph-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Motor Vehicles</span></nav>
+          <h1>MOTOR VEHICLE <span>SALES &amp; LEASING</span></h1>
+          <p class="lead">We offer Toyota Motor Vehicles &mdash; station wagons and pick-ups designed to be versatile and reliable on our rough roads and terrain, with a focus on driver comfort.</p>
+          <div class="ph-actions"><a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20your%20Toyota%20vehicles." class="btn btn-primary" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a><a href="#range" class="btn btn-outline">View Range</a></div>
+        </div>
+        <div class="ph-media"><img src="images/prado-new.jpg" alt="Toyota Prado new generation" /><div class="ph-badge"><small>Toyota</small>Reliable for every terrain</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="range">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Our Toyota Range</span>
+          <h2 class="title">CHOOSE YOUR <span>TOYOTA</span></h2>
+          <p class="lead">Prado, Hilux and Fortuner &mdash; each available in new and previous generation.</p>
+        </div>
+        <div>
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-filter="all" type="button">All</button>
+            <button class="tab" data-filter="prado" type="button">Prado</button>
+            <button class="tab" data-filter="hilux" type="button">Hilux</button>
+            <button class="tab" data-filter="fortuner" type="button">Fortuner</button>
+          </div>
+          <div class="grid g3"><article class="product reveal" data-cat="prado">
+            <div class="product-media"><img src="images/prado-new.jpg" alt="Toyota Prado New Generation" loading="lazy" /><span class="product-tag">New Gen</span></div>
+            <div class="product-body">
+              <small>Prado</small>
+              <h3>Toyota Prado New Generation</h3>
+              <p>The latest-generation Prado station wagon &mdash; refined comfort with the toughness to tackle rough terrain.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Prado%20New%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article><article class="product reveal" data-cat="prado">
+            <div class="product-media"><img src="images/prado-prev.jpg" alt="Toyota Prado Previous Generation" loading="lazy" /><span class="product-tag">Previous Gen</span></div>
+            <div class="product-body">
+              <small>Prado</small>
+              <h3>Toyota Prado Previous Generation</h3>
+              <p>The proven previous-generation Prado &mdash; a durable, comfortable station wagon for family and fleet use.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Prado%20Previous%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article><article class="product reveal" data-cat="hilux">
+            <div class="product-media"><img src="images/hilux-new.jpg" alt="Toyota Hilux New Generation" loading="lazy" /><span class="product-tag">New Gen</span></div>
+            <div class="product-body">
+              <small>Hilux</small>
+              <h3>Toyota Hilux New Generation</h3>
+              <p>The new-generation double cabin Hilux pick-up &mdash; strong, versatile and ready for work and weekends.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Hilux%20New%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article><article class="product reveal" data-cat="hilux">
+            <div class="product-media"><img src="images/hilux-prev.jpg" alt="Toyota Hilux Previous Generation" loading="lazy" /><span class="product-tag">Previous Gen</span></div>
+            <div class="product-body">
+              <small>Hilux</small>
+              <h3>Toyota Hilux Previous Generation</h3>
+              <p>A trusted workhorse of Ugandan roads &mdash; the previous-generation Hilux double cabin.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Hilux%20Previous%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article><article class="product reveal" data-cat="fortuner">
+            <div class="product-media"><img src="images/fortuner-new.jpg" alt="Toyota Fortuner New Generation" loading="lazy" /><span class="product-tag">New Gen</span></div>
+            <div class="product-body">
+              <small>Fortuner</small>
+              <h3>Toyota Fortuner New Generation</h3>
+              <p>The new-generation Fortuner station wagon &mdash; modern styling with a comfortable, capable drive.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Fortuner%20New%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article><article class="product reveal" data-cat="fortuner">
+            <div class="product-media"><img src="images/fortuner-prev.jpg" alt="Toyota Fortuner Previous Generation" loading="lazy" /><span class="product-tag">Previous Gen</span></div>
+            <div class="product-body">
+              <small>Fortuner</small>
+              <h3>Toyota Fortuner Previous Generation</h3>
+              <p>The previous-generation Fortuner &mdash; dependable, spacious and built for rough roads.</p>
+              <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20the%20Toyota%20Fortuner%20Previous%20Generation.%20Please%20share%20availability%20and%20pricing." class="btn btn-outline btn-sm" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
+            </div>
+          </article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Why Toyota</span>
+          <h2 class="title">DURABLE. RELIABLE. <span>READY.</span></h2>
+          
+        </div>
+        <div class="grid g3">
+          <div class="plain reveal"><div class="icon-box"><i class="fa-solid fa-mountain"></i></div><h3 class="card-title">Built for Our Roads</h3><p>Durable and versatile vehicles designed for the rough roads and terrain we drive on every day.</p></div>
+          <div class="plain reveal d1"><div class="icon-box"><i class="fa-solid fa-gas-pump"></i></div><h3 class="card-title">Fuel Efficient</h3><p>Dependable, fuel-efficient Toyotas that keep running costs sensible over the long term.</p></div>
+          <div class="plain reveal d2"><div class="icon-box"><i class="fa-solid fa-couch"></i></div><h3 class="card-title">Driver Comfort</h3><p>Every model is chosen with the driver in mind &mdash; comfort for long journeys and daily use.</p></div>
+        </div>
+        <div class="center reveal" style="margin-top:44px"><p class="lead" style="margin-bottom:22px">Looking to buy or lease? Tell us what you need and our team will take it from there.</p><a href="contact.html#quote" class="btn btn-primary">Request a Quotation</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split reverse">
+          <div class="split-media reveal"><img src="images/carrier.jpg" alt="A car carrier delivering Toyota vehicles" loading="lazy" /></div>
+          <div class="split-body reveal d1">
+            <span class="eyebrow">After You Buy</span>
+            <h2 class="title">WE LOOK AFTER <span>YOUR VEHICLE</span></h2>
+            <p class="lead">Your relationship with us doesn&rsquo;t end at delivery. Our garage, genuine parts, accessories and driver training keep your vehicle performing.</p>
+            <ul class="check-list">
+              <li><i class="fa-solid fa-circle-check"></i><span>Servicing and repairs in our <a href="garage.html" class="link-arrow">Garage</a></span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Genuine <a href="spare-parts.html" class="link-arrow">Spare Parts &amp; Accessories</a></span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Registration and number plates via <a href="clearing-forwarding.html" class="link-arrow">Clearing &amp; Forwarding</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div class="reveal"><h2>FIND YOUR <span style="color:#fff">TOYOTA</span></h2><p>Tell us the model you want and we will share availability and pricing.</p></div>
+        <div class="cta-actions reveal d1">
+          <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20am%20interested%20in%20your%20Toyota%20vehicles." class="btn btn-white" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="tel:+256782140304" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> +256 782 140304</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand"><img src="images/logo.png" alt="Lease Ventures logo" /><b>LEASE VENTURES<br>(U) LTD</b></div>
+          <p class="footer-desc">A Ugandan-owned automotive company delivering quality automotive solutions to the utmost satisfaction of our customers.</p>
+          <p class="footer-tag">We keep you moving.</p>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>What We Do</h5>
+          <ul>
+            <li><a href="vehicles.html">Motor Vehicles</a></li>
+            <li><a href="motorcycles.html">Motorcycles</a></li>
+            <li><a href="garage.html">Garage Services</a></li>
+            <li><a href="spare-parts.html">Spare Parts &amp; Accessories</a></li>
+            <li><a href="clearing-forwarding.html">Clearing &amp; Forwarding</a></li>
+            <li><a href="driver-training.html">Driver &amp; Rider Training</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Get in Touch</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i><span>Plot 932, Bukoto Ntinda Road (Near Kenjoy Supermarket)<br>P. O. Box 134904, Kampala</span></li>
+            <li><i class="fa-solid fa-phone"></i><span><a href="tel:+256782140304">+256 782 140304</a><br><a href="tel:+256393236168">+256 393 236168</a></span></li>
+            <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+            <li><i class="fa-solid fa-globe"></i><span>www.leaseventures.co.ug</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 <span>Lease Ventures (U) Ltd</span>. All rights reserved.</p>
+        <p>URSB No. 80020002067978 &nbsp;·&nbsp; PPDA No. PRV/SPLS/26194/SEP/19</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/256782140304?text=Hello%20Lease%20Ventures%2C%20I%20would%20like%20to%20make%20an%20enquiry." class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button class="to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
