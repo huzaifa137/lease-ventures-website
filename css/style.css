@@ -647,7 +647,9 @@ html[data-theme="dark"] .hero-bg-img {
     filter: brightness(.75);
 }
 
+
 /* Hero video: sits on top of the poster, fades in only once it is really playing */
+
 .hero-video {
     position: absolute;
     inset: 0;
